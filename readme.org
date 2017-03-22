@@ -1,6 +1,6 @@
 #+TITLE: Microsimulation Web Visualisation
 
-http://img.shields.io/:license-gpl3-blue.svg
+[[http://img.shields.io/:license-gpl3-blue.svg]]
 
 This package is a support package for the [[https://github.com/mclements/microsimulation][microsimulation R package]]. It is intedend to help non R users by allowing a limited number of analysis through the web.
 
