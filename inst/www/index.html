@@ -8,34 +8,36 @@
     <script src="opencpu/opencpu-0.4.js"></script>
 
     <script>
-    //init this script when the page has loaded
-    $(document).ready(function(){
-      $("#submitbutton").on("click", function(){
+     //init this script when the page has loaded
+     $(document).ready(function(){
+	 $("#submitbutton").on("click", function(){
 
-        //disable the button to prevent multiple clicks
-        $("#submitbutton").attr("disabled", "disabled");
+             //disable the button to prevent multiple clicks
+             $("#submitbutton").attr("disabled", "disabled");
 
-        //read the value for 'myname'
-        var nfield = parseInt($("#nfield").val());
-        var screenfield = $("#screenfield").val();
+             //read the value for 'myname'
+             var nfield = parseInt($("#nfield").val());
+             var screenfield = $("#screenfield").val();
+	     var typefield = $("#typefield").val();
 
-        //create the plot area on the plotdiv element
-        var req = $("#plotdiv").rplot("myggplot", {
-          n : nfield,
-          screen : screenfield
-        })
+             //create the plot area on the plotdiv element
+             var req = $("#plotdiv").rplot("myggplot", {
+		 n : nfield,
+		 screen : screenfield,
+		 type : typefield
+             })
 
-        //if R returns an error, alert the error message
-        req.fail(function(){
-          alert("Server error: " + req.responseText);
-        });
+             //if R returns an error, alert the error message
+             req.fail(function(){
+		 alert("Server error: " + req.responseText);
+             });
 
-        //after request complete, re-enable the button
-        req.always(function(){
-          $("#submitbutton").removeAttr("disabled")
-        });
-      });
-    });
+             //after request complete, re-enable the button
+             req.always(function(){
+		 $("#submitbutton").removeAttr("disabled")
+             });
+	 });
+     });
     </script>
 
     <style>
@@ -70,6 +72,16 @@
 	  <option>mixed_screening</option>
           <option>regular_screen</option>
 	  <option>single_screen</option>
+      </select>
+
+
+      <b>Type of outcome</b> <select id="typefield">
+	  <option>incidence.rate</option>
+	  <option>testing.rate</option>
+	  <option>biopsy.rate</option>
+	  <option>metastasis.rate</option>
+	  <option>pc.mortality.rate</option>
+	  <option>allcause.mortality.rate</option>
       </select>
 
       <br />
