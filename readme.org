@@ -1,0 +1,28 @@
+#+TITLE: Microsimulation Web Visualisation
+
+http://img.shields.io/:license-gpl3-blue.svg
+
+This package is a support package for the [[https://github.com/mclements/microsimulation][microsimulation R package]]. It is intedend to help non R users by allowing a limited number of analysis through the web.
+
+* Use on the web
+
+This is WIP, but will eventually be hosted somewhere.
+
+* Use locally
+
+ run the app in your local R session:
+
+** Install R packages
+#+BEGIN_SRC R :exports code :eval never
+  install.packages("opencpu")
+  install.packages("devtools")
+  library(devtools)
+  install_github(c("mclements/microsimulation", "andreasakarlsson/microsimulationWebVis"))
+#+END_SRC
+
+** Load opencpu and the microsimulationWebVis
+
+#+BEGIN_SRC R :exports code :eval never
+  library(opencpu)
+  opencpu$browse("/library/microsimulationWebVis/www")
+#+END_SRC

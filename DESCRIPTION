@@ -1,0 +1,11 @@
+Package: microsimulationWebVis
+Type: Package
+Title: Web visualisation for the microsimulation package
+Version: 0.1-1
+Date: 2016-03-22
+Author: Andreas Karlsson
+Maintainer: Andreas Karlsson <andreas.a.karlsson@ki.se>
+Description: This package is a support package for the microsimulation R package. It is intedend to help non R users by allowing a limitted number of analysis through the web.
+License: GPL (>= 3)
+Depends: microsimulation, ggplot2, opencpu
+LazyData: true
